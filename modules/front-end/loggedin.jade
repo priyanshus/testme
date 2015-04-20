@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    title Login APP
+    style
+      include ./stylesheets/style.css
+
+body
+  div#welcome
+    p(name="welcome-text") Logged In!!
+  div#loginform
+    form(name="login", action="/login", method="post")
+      p
+       input(type="text", name="username", placeholder="User Name")
+      p
+       input(type="password", name="password", placeholder="Password")
+      p
+       button(type="submit") Login
+  div#logoutform
+    form(name="logout", action="/logout", method="post")
+      p
+       button(type="submit") Logout
