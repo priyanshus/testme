@@ -1,10 +1,8 @@
 var app = require('../index'),
     bodyparser = require("body-parser"),
     bodyparser = require("body-parser"),
-	  expressValidator = require("express-validator"),
 	  sessions = require("client-sessions"),
-	  validator = require('./validator.js');
-
+	  loginFormValidator = require('./validator.js');
 
 app.use(bodyparser.json());
 app.use(sessions ({
@@ -20,7 +18,8 @@ app.use(sessions ({
         }
     }));
 
-app.use(expressValidator());
+//Old express-validator
+//app.use(expressValidator());
 app.use(bodyparser.urlencoded({
     extended: true
 }));
@@ -29,7 +28,7 @@ app.route('/login')
 
     .get(function(req, res) {
          if(req.gateway.pass == 'pass') {
-             res.render('loggedin.jade');
+             res.render('./dash-board/index.html');
          }else {
              res.redirect('/');
          }
@@ -39,18 +38,19 @@ app.route('/login')
     .post(function(req, res) {
          var username = req.body.username;
              password = req.body.password;
-             isValidLoginForm = validator.validateLoginForm(req,res);
+             isValidLoginForm = loginFormValidator.validateLoginForm(req,res);
 
-         if(isValidLoginForm) {
-             res.render('index.jade', {
+         if(!isValidLoginForm) {
+             console.log('Wrong Crdentials');
+             res.render('index.html', {
              message: 'Something wrong with credentials'
              });
          }else{
-              if(username == 'test' && password=='test') {
+              if(username == 'username' && password=='password') {
               req.gateway.pass = 'pass';
-              res.render('loggedin.jade');
+              res.render('./dash-board/index.html');
               }else {
-                   res.render('index.jade', {
+                   res.render('index.html', {
                    message: 'Not a valid user'
                    });
               }

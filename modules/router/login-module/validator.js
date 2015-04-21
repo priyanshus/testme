@@ -1,8 +1,16 @@
+var validator = require("validator");
+
 exports.validateLoginForm = function(req, res) {
-  	var username = req.body.username;
-  	var password = req.body.password;
-  	req.assert('username', 'Username is required').notEmpty();
-  	req.assert('password', 'Password is required').notEmpty();
-  	var errors = req.validationErrors();
-  	return errors;
+  	var username = req.body.username,
+  	    password = req.body.password;
+
+    //console.log(username);
+    var isUserNameValidLength = validator.isLength(username,6,10),
+        isUserNameAlphaNumeric = validator.isAlphanumeric(username),
+        isUserNameNull = validator.isNull(username),
+        isPasswordNull = validator.isNull(password),
+        isPasswordValidLength = validator.isLength(password,6,50);
+
+    return (isUserNameValidLength && isUserNameAlphaNumeric && !isUserNameNull
+            && !isPasswordNull && isPasswordValidLength);
 };

@@ -1,15 +1,19 @@
 var express = require("express"),
-	  app = module.exports = express()
+app = module.exports = express(),
 		loginRouter = require('./login-module/index'),
-		dashBoardRouter = require('./dashboard/index');
+		signupRouter = require('./signup-module/index'),
+		dashBoardRouter = require('./dashboard-module/index'),
+		path = require("path");
 
-app.set('views', './modules/front-end');
-app.set('view engine', 'jade');
+app.set('views',path.join(__dirname, '../..', 'front-end'));
+app.engine('html', require('ejs').renderFile);
+app.use(express.static(path.join(__dirname, '../..', 'front-end')));
 
 app.get('/', function(req, res) {
-		res.render('index.jade');
+		res.render('index.html');
 });
 
-app.get('/*', function(req,res) {
+app.post('/logout', function(req,res) {
+	  req.gateway.reset();
     res.redirect('/');
 });

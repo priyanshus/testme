@@ -1,0 +1,18 @@
+body {
+  position: relative;
+  padding-top: 50px;
+}
+
+.jumbotron {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #fff
+}
+
+p.small {
+  font-size: 16px;
+  max-width: 450px;
+  margin: 0 0 0 0;
+  color: #00008B;
+}

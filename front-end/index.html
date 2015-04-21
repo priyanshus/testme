@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="App to test" name="description">
+    <link href="/images/favicon.ico" rel="icon">
+
+    <title>Test Me</title><!-- Bootstrap core CSS -->
+    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" type=
+    "text/css">
+    <link href="./stylesheets/login-app.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-target="#navbar"
+                data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button> <a class="navbar-brand" href="#">Test Me</a>
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbar">
+                <form class="navbar-form navbar-right" action="/login" method="post">
+                    <div class="form-group">
+                        <input name="username" class="form-control" placeholder="User Name"
+                        required="" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" name="password" placeholder="Password"
+                        required="" type="password">
+                    </div><button class="btn btn-success" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Test Me</h1>
+
+                    <p class="small">A web application which has intentionally
+                    built to help Software professional and new learner to
+                    learn software testing.</p><br>
+
+                    <p class="small">Allows you to do all different kind of
+                    testing either in manual or automation way.</p>
+                </div>
+
+                <div class="col-md-6">
+                    <form class="form-horizontal" action="/signup" method="post">
+                        <div>
+                            <div class="form-group col-sm-10">
+                                <h2>Sign Up</h2>
+
+                                <p class="small">Always free!</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <input class="form-control" name="fname"
+                                placeholder="First Name" required="required" type=
+                                "text">
+                            </div>
+
+                            <div class="col-sm-5">
+                                <input class="form-control" name="lname"
+                                placeholder="Last Name" required="required" type=
+                                "text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input class="form-control" name="email"
+                                placeholder="Email" required="required" type="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input class="form-control" name="username1"
+                                placeholder="User Name" required="required" type=
+                                "text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input class="form-control" name="password1"
+                                placeholder="Password" required="required" type=
+                                "password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <button class="btn btn-success" type=
+                                "submit">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>What we do else?</h2>
+
+                <p>We not only provide you an application to run your tests and
+                find defects, we also assist you to make your software better
+                and user friendly.We also assist you to take decision
+                regarding</p>
+
+                <p><a class="btn btn-default" href="#">View details
+                &raquo;</a></p>
+            </div>
+
+            <div class="col-md-6">
+                <h2>How can you contact?</h2>
+
+                <p></p>
+
+                <p><a class="btn btn-default" href="#">View details
+                &raquo;</a></p>
+            </div>
+
+        </div>
+        <footer>
+            <p>&copy; <b>Softo PS, 2015</b> Mumbai (MH),India</p>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </div>
+</body>
+</html>
