@@ -1,3 +1,4 @@
+'use strict';
 var express = require("express"),
 app = module.exports = express(),
 		loginRouter = require('./login-module/index'),
