@@ -32,22 +32,25 @@ app.route('/login')
        }
   })
 
-
   .post(function(req, res) {
      var username = req.body.username,
          password = req.body.password,
          isValidLoginForm = loginFormValidator.validateLoginForm(req,res);
 
      if(!isValidLoginForm) {
-         res.redirect('/');
+       res.status(200).
+       send('wrong-credential');
      }else {
         dbManager.checkLoginCredential(username,password)
         .spread(function (result) {
+
           if(result[0].password == password) {
             req.gateway.pass = 'pass';
-            res.redirect('./dash-board');
+            res.status(200).
+            send('logged in');
           }else {
-            res.redirect('/');
+            res.status(200).
+            send('wrong-credential');
           }
         })
         .catch(function () {

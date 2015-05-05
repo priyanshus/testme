@@ -39,8 +39,7 @@ app.route('/logout')
   .post(function(req, res) {
 		req.gateway.reset();
 	  res.redirect('/');
-  }
-);
+  });
 
 app.get('*', function(req, res) {
   res.render('page-not-found.html');
@@ -51,7 +50,7 @@ app.get('/you-are-so-intelligent', function(req, res) {
 });
 
 var server = app.listen(app.get('port'), function() {
-	  var host = server.address().address;
-	  var port = server.address().port;
+  var host = server.address().address;
+	    port = server.address().port;
 	  console.log('Example app listening at http://localhost:%s', port);
 });

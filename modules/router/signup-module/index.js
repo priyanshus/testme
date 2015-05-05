@@ -16,12 +16,15 @@ app.route('/signup')
   .post(function(req, res) {
     var isValidSignupForm = validator.validateSignUpForm(req,res),
         username = req.body.username1,
-        password = req.body.password1;
+        password = req.body.password1,
+        fname = req.body.fname,
+        lname = req.body.lname,
+        email = req.body.email;
 
       if(!isValidSignupForm) {
         res.redirect('/');
       }else{
-        dbManager.insertSignupData(username,password)
+        dbManager.insertSignupData(username,password,fname,lname,email)
         .spread(function (result) {
           if(result.affectedRows == 1) {
             req.gateway.pass = 'pass';
